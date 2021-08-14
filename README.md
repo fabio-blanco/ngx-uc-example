@@ -14,4 +14,4 @@ view the examples.
 ## Copyright and license ##
 
 © Copyright 2021 Fabio M. Blanco. Released under the
-[MIT License](https://github.com/fabio-blanco/ngx-uc/blob/master/LICENSE)
+[MIT License](https://github.com/fabio-blanco/ngx-uc-example/blob/master/LICENSE)
