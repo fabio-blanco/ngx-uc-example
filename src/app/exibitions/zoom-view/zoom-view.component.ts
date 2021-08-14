@@ -16,7 +16,8 @@ export class ZoomViewComponent implements OnInit {
 customConfig: UcZoomViewConfig = {
   cssClasses: {
     zoomView: 'custom-img-zoom-result',
-    lens: 'custom-img-zoom-lens'
+    lens: 'custom-img-zoom-lens',
+    imageContainer: 'custom-img-container'
   }
 };
   `;
