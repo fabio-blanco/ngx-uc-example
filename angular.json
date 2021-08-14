@@ -27,9 +27,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/highlight.js/styles/monokai-sublime.css",
+              "node_modules/ngx-uc/resources/uc.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "highlight.js"
+            ]
           },
           "configurations": {
             "production": {

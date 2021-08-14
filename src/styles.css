@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.custom-img-zoom-lens {
+  position: absolute;
+  border: 1px solid aqua;
+  border-radius: 10px;
+  /*set the size of the lens:*/
+  background-color: white;
+  opacity: 0.2;
+  width: 100px;
+  height: 100px;
+}
+
+.custom-img-zoom-result {
+  position: absolute;
+  top: 0;
+  margin-left: 10px;
+  border: 2px solid blue;
+  border-radius: 20px;
+  /*set the size of the result div:*/
+  width: 500px;
+  height: 500px;
+}
+
+.custom-img-container {
+  position: relative;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+.custom-img-container img {
+  vertical-align: middle;
+}
+
