@@ -83,6 +83,32 @@ customConfig: UcZoomViewConfig = {
 }
   `;
 
+  viewPositionTemplate = `
+<img src="assets/img/example-1200x746.jpg" [style]="{'width': '500px'}" uc-zoom-view [uc-zoom-view-config]="customConfig" alt="Example image">
+  `;
+
+  viewPositionComponent = `
+customConfig: UcZoomViewConfig = {
+  viewPosition: UcZoomViewPosition.LEFT,
+  viewDistance: 20
+};
+  `;
+
+  turnOnOffTemplate = `
+<img src="assets/img/example-1200x746.jpg" [style]="{'width': '500px'}" uc-zoom-view [(ucZoomOn)]="on" alt="Example image">
+
+<button (click)="toggleSwitch()">Turn Zoom {{!on ? 'on' : 'off'}}</button>
+<strong style="margin-left: 10px">Zoom is:</strong><strong [style.color]="on? 'darkblue' : 'darkred'"> {{on? 'on' : 'off'}}</strong>
+  `;
+
+  turnOnOffComponent = `
+on = true;
+
+toggleSwitch(): void {
+  this.on = !this.on;
+}
+  `;
+
   constructor() { }
 
   ngOnInit(): void {

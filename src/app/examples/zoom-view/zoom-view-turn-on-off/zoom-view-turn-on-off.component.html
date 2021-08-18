@@ -1,0 +1,4 @@
+<img src="assets/img/example-1200x746.jpg" [style]="{'width': '500px'}"  uc-zoom-view [(ucZoomOn)]="on" alt="Example image"> <br>
+
+<button (click)="toggleSwitch()">Turn Zoom {{!on ? 'on' : 'off'}}</button>
+<strong style="margin-left: 10px">Zoom is:</strong><strong [style.color]="on? 'darkblue' : 'darkred'"> {{on? 'on' : 'off'}}</strong>

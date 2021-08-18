@@ -19,6 +19,7 @@
   /*set the size of the result div:*/
   width: 500px;
   height: 500px;
+  z-index: 9999;
 }
 
 .custom-img-container {
