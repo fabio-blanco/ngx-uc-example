@@ -1,0 +1,13 @@
+<div class="restrained-container">
+  <img src="assets/img/example-1200x746.jpg" style="width: 500px" uc-zoom-view
+       [uc-zoom-view-config]="customConfig" #zoomViewImgToResize="ucZoomView" alt="Example image"> <br>
+</div>
+
+
+<div class="range">
+  <label for="imgWidthRange">Change the image width:</label>
+  <input type="range" #imgWidthRange min="100" max="500" id="imgWidthRange" value="500" (input)="changeWidth(imgWidthRange, zoomViewImgToResize.image)" >
+  <strong style="margin-left: 10px">Image width is:</strong><strong style="color: darkblue"> {{imageWidth}}px</strong>
+</div>
+
+

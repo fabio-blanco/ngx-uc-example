@@ -109,6 +109,54 @@ toggleSwitch(): void {
 }
   `;
 
+  lensDimensionsTemplate = `
+<div class="restrained-container">
+  <img src="assets/img/example-1200x746.jpg" style="width: 500px" uc-zoom-view
+       [uc-zoom-view-config]="customConfig" #zoomViewImgToResize="ucZoomView" alt="Example image"> <br>
+</div>
+
+
+<div class="range">
+  <label for="imgWidthRange">Change the image width:</label>
+  <input type="range" #imgWidthRange min="100" max="500" id="imgWidthRange" value="500" (input)="changeWidth(imgWidthRange, zoomViewImgToResize.image)" >
+  <strong style="margin-left: 10px">Image width is:</strong><strong style="color: darkblue"> {{imageWidth}}px</strong>
+</div>
+  `;
+
+  lensDimensionsComponent = `
+import {Component, OnInit} from '@angular/core';
+import {UcZoomViewConfig, UcZoomViewLensProportionType} from "ngx-uc";
+
+@Component({
+  selector: 'app-zoom-view-config-lens-dimensions',
+  templateUrl: './zoom-view-config-lens-dimensions.component.html',
+  styleUrls: ['./zoom-view-config-lens-dimensions.component.css']
+})
+export class ZoomViewConfigLensDimensionsComponent implements OnInit {
+
+  imageWidth = 500;
+
+  customConfig: UcZoomViewConfig = {
+    lensOptions: {
+      baseProportionType: UcZoomViewLensProportionType.SMALLER_SIZE,
+      sizeProportion: 0.3
+    }
+  };
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  changeWidth(imgWidthRangeInput: HTMLInputElement, image:HTMLImageElement) {
+    let value = imgWidthRangeInput.value;
+    this.imageWidth = parseInt(value);
+    image.style.width = \`\${this.imageWidth}px\`;
+  }
+
+}
+  `;
+
   constructor() { }
 
   ngOnInit(): void {

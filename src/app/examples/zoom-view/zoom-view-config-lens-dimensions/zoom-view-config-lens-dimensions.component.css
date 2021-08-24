@@ -1,0 +1,18 @@
+.range>label {
+  display: block;
+  font-weight: bold;
+}
+
+.range>input, .range>strong {
+  vertical-align: middle;
+}
+
+.restrained-container {
+  min-height: 300px;
+  width: 500px;
+  border: 1px solid black;
+}
+
+.restrained-container img {
+  vertical-align: middle;
+}

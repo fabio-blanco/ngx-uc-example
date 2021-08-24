@@ -13,6 +13,7 @@ import { ZoomViewCustomCssComponent } from './examples/zoom-view/zoom-view-custo
 import { ZoomViewExternalizedViewComponent } from './examples/zoom-view/zoom-view-externalized-view/zoom-view-externalized-view.component';
 import { ZoomViewPositionComponent } from './examples/zoom-view/zoom-view-position/zoom-view-position.component';
 import { ZoomViewTurnOnOffComponent } from './examples/zoom-view/zoom-view-turn-on-off/zoom-view-turn-on-off.component';
+import { ZoomViewConfigLensDimensionsComponent } from './examples/zoom-view/zoom-view-config-lens-dimensions/zoom-view-config-lens-dimensions.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ZoomViewTurnOnOffComponent } from './examples/zoom-view/zoom-view-turn-
     ZoomViewCustomCssComponent,
     ZoomViewExternalizedViewComponent,
     ZoomViewPositionComponent,
-    ZoomViewTurnOnOffComponent
+    ZoomViewTurnOnOffComponent,
+    ZoomViewConfigLensDimensionsComponent
   ],
   imports: [
     BrowserModule,
