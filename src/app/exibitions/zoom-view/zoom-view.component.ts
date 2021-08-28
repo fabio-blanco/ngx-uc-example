@@ -157,6 +157,104 @@ export class ZoomViewConfigLensDimensionsComponent implements OnInit {
 }
   `;
 
+  eventsTemplate = `
+<img [src]="imageSrc"
+     uc-zoom-view #zoomView="ucZoomView" [style]="{'width': '500px'}" alt="Example image"
+     [ucZoomOn]="turnedOn"
+     (ready)="onReady($event)"
+     (ucZoomOnChange)="onZoomTurnedOnOff($event)"
+     (zoomStarted)="onZoomStarted()"
+     (zoomEnded)="onZoomEnded()"
+     (lensPosition)="onLensPositionChange($event)"
+     (imageSrcChanged)="onSrcChanged($event)"
+     (resizeLensDimensions)="onZoomLensResized($event)">
+  `;
+
+  eventsCode = `
+// imports
+import {UcZoomViewImageSourceChangedEvent, UcZoomViewReadyEvent, UcZoomViewResizeLensDimensionsEvent} from "ngx-uc";
+
+// ...
+
+export class ZoomViewEventsComponent implements OnInit {
+
+  // ...
+
+  onReady(event: UcZoomViewReadyEvent): void {
+    this.ready = true;
+  }
+
+  onZoomTurnedOnOff(on: boolean): void {
+    this.turnedOn = on;
+  }
+
+  onZoomStarted(): void {
+    this.displayingZoom = true;
+  }
+
+  onZoomEnded(): void {
+    this.displayingZoom = false;
+    this.lensPosition.x = this.lensPosition.y = 0;
+  }
+
+  onSrcChanged(event: UcZoomViewImageSourceChangedEvent): void {
+    this.srcChangedEvent = event;
+  }
+
+  onZoomLensResized(event: UcZoomViewResizeLensDimensionsEvent): void {
+    this.oldLensDimensions = event.oldValue;
+    this.newLensDimensions = event.newValue;
+  }
+
+  onLensPositionChange(event: UcCoordinates) {
+    this.lensPosition = event;
+  }
+
+  // ...
+
+}
+  `;
+
+  manualInitializationTemplate = `
+<img src="assets/img/example-1200x746.jpg"
+     [style]="{'width': '500px'}"
+     uc-zoom-view #ucZoomView="ucZoomView"
+     [uc-zoom-view-config]="customConfig"
+     alt="Test image"> <br>
+
+<button (click)="initializeZoomView()">Initialize Zoom View</button>
+  `;
+
+  manualInitializationCode = `
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {UcZoomViewComponent, UcZoomViewConfig} from "ngx-uc";
+
+@Component({
+  selector: 'app-zoom-view-manual-initialization',
+  templateUrl: './zoom-view-manual-initialization.component.html',
+  styleUrls: ['./zoom-view-manual-initialization.component.css']
+})
+export class ZoomViewManualInitializationComponent implements OnInit {
+
+  @ViewChild('ucZoomView')
+  ucZoomView!: UcZoomViewComponent;
+
+  customConfig: UcZoomViewConfig = {
+    autoInitialize: false
+  }
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  initializeZoomView(): void {
+    this.ucZoomView.initialize();
+  }
+
+}
+  `;
+
   constructor() { }
 
   ngOnInit(): void {

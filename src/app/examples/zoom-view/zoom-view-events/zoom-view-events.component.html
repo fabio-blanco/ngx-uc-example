@@ -1,0 +1,42 @@
+<div class="flex-container">
+  <div class="image-container">
+    <img [src]="imageSrc"
+         uc-zoom-view #zoomView="ucZoomView" [style]="{'width': '500px'}" alt="Example image"
+         [ucZoomOn]="turnedOn"
+         (ready)="onReady($event)"
+         (ucZoomOnChange)="onZoomTurnedOnOff($event)"
+         (zoomStarted)="onZoomStarted()"
+         (zoomEnded)="onZoomEnded()"
+         (lensPosition)="onLensPositionChange($event)"
+         (imageSrcChanged)="onSrcChanged($event)"
+         (resizeLensDimensions)="onZoomLensResized($event)">
+  </div>
+  <div class="commands">
+    <button (click)="swapImages()">Swap image</button><br>
+    <button (click)="toogleComponentTurnedOnOff()">Turn {{turnedOn? 'off' : 'on'}}</button><br>
+    <div class="img-width-range">
+      <strong>Image size: </strong>
+      <input type="range" #imgWidthRange
+             min="100"
+             max="500"
+             id="imgWidthRange"
+             value="500"
+             (input)="changeImageWidth(imgWidthRange, zoomView.image)">
+    </div>
+  </div>
+</div>
+<div class="info-div">
+  <strong>State: </strong><strong [style.color]="ready?'darkblue' : 'darkred'" >{{ready? 'ready' : 'loading...'}}</strong> <br>
+  <strong>Component turned: </strong><strong [style.color]="turnedOn?'darkblue' : 'darkred'"> {{turnedOn? 'on' : 'off'}}</strong> <br>
+  <strong>Zoom: </strong><strong [style.color]="displayingZoom?'darkblue' : 'darkred'" >{{displayingZoom? 'started' : 'stopped'}}</strong> <br>
+  <strong>Lens position: </strong>({{lensPosition.x}}, {{lensPosition.y}})
+  <div class="event-block-info">
+    <strong>Last lens dimension: </strong> {{oldLensDimensions}} <br>
+    <strong>New lens dimension: </strong> {{newLensDimensions}}
+  </div>
+  <div class="event-block-info">
+    <strong>Last src: </strong> {{srcChangedEvent?.oldValue}} <br>
+    <strong>New src: </strong> {{srcChangedEvent?.newValue}}
+  </div>
+</div>
+

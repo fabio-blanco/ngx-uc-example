@@ -1,0 +1,39 @@
+.info-div {
+  padding: 1rem;
+}
+
+.event-block-info {
+  border: 1px solid black;
+  width: 460px;
+  margin-top: 6px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.commands {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.img-width-range {
+  padding: 4px;
+}
+
+button {
+  margin-bottom: 6px;
+}
+
+.img-width-range>strong {
+  display: block;
+}
+
+.img-width-range>input {
+  vertical-align: middle;
+}
+
+.image-container {
+  min-width: 500px;
+  min-height: 320px;
+}

@@ -14,6 +14,8 @@ import { ZoomViewExternalizedViewComponent } from './examples/zoom-view/zoom-vie
 import { ZoomViewPositionComponent } from './examples/zoom-view/zoom-view-position/zoom-view-position.component';
 import { ZoomViewTurnOnOffComponent } from './examples/zoom-view/zoom-view-turn-on-off/zoom-view-turn-on-off.component';
 import { ZoomViewConfigLensDimensionsComponent } from './examples/zoom-view/zoom-view-config-lens-dimensions/zoom-view-config-lens-dimensions.component';
+import { ZoomViewEventsComponent } from './examples/zoom-view/zoom-view-events/zoom-view-events.component';
+import { ZoomViewManualInitializationComponent } from './examples/zoom-view/zoom-view-manual-initialization/zoom-view-manual-initialization.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ZoomViewConfigLensDimensionsComponent } from './examples/zoom-view/zoom
     ZoomViewExternalizedViewComponent,
     ZoomViewPositionComponent,
     ZoomViewTurnOnOffComponent,
-    ZoomViewConfigLensDimensionsComponent
+    ZoomViewConfigLensDimensionsComponent,
+    ZoomViewEventsComponent,
+    ZoomViewManualInitializationComponent
   ],
   imports: [
     BrowserModule,
