@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href /ngx-uc-example/ && npm run cp:404",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "cp:404": "cp ./dist/ngx-uc-example/index.html ./dist/ngx-uc-example/404.html"
   },
   "private": true,
   "dependencies": {
