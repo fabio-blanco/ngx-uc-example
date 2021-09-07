@@ -3,6 +3,10 @@
 The demo app with examples of usage of the [ngx-uc](https://github.com/fabio-blanco/ngx-uc) 
 library components.
 
+## Docs
+
+You can see the ngx-uc documentation in the [official site](https://fabio-blanco.github.io/ngx-uc/?utm_source=github&utm_medium=example-readme).
+
 ## Live Demo ##
 
 [Access the live demo to see the examples on using the ngx-uc components](https://fabio-blanco.github.io/ngx-uc-example).
